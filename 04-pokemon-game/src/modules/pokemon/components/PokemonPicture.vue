@@ -7,7 +7,11 @@
   </section>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+interface Props {
+  pokemonId: number;
+}
+</script>
 
 <style scoped>
 img {
