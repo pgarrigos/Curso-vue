@@ -2,14 +2,7 @@
   <!-- component -->
   <section class="relative flex flex-1 h-full text-gray-600 body-font">
     <div class="absolute inset-0 bg-gray-300">
-      <iframe
-        width="600"
-        height="450"
-        style="border: 0"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"
-      ></iframe>
+
       <iframe
         width="100%"
         height="100%"

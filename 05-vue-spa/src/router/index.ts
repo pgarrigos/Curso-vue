@@ -1,3 +1,5 @@
+import NotFound404 from '@/common/pages/NotFound404.vue';
+import isAuthenticatedGuard from '@/modules/auth/guards/is-authenticated.guard';
 import HomePage from '@/modules/landing/pages/HomePage.vue';
 import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 
@@ -31,6 +33,21 @@ export const router = createRouter({
           name: 'contact',
           component: () => import('@/modules/landing/pages/ContactPage.vue'),
         },
+
+        {
+          path: '/pokemon/:id',
+          name: 'pokemon',
+          beforeEnter: [isAuthenticatedGuard],
+          // props: true,
+          props: (route) => {
+            // console.log({ route });
+            const id = +route.params.id;
+
+            return isNaN(id) ? { id: 1 } : { id };
+          },
+
+          component: () => import('@/modules/Pokemons/pages/PokemonPage.vue'),
+        },
       ],
     },
     // Auth
@@ -56,7 +73,8 @@ export const router = createRouter({
 
     {
       path: '/:pathMatch(.*)*',
-      redirect: '/',
+      // redirect: '/',
+      component: NotFound404,
     },
   ],
 });
