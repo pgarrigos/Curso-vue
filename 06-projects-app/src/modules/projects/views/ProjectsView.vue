@@ -1,28 +1,28 @@
 <template>
   <div>
-    <custom-modal>
-      <div class="w-full overflow-x-auto">
-        <table class="table">
-          <!-- head -->
-          <thead>
-            <tr>
-              <th></th>
-              <th>Projecto</th>
-              <th>Tareas</th>
-              <th>Avance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="hover">
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </custom-modal>
+    <div class="w-full overflow-x-auto">
+      <table class="table">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th></th>
+            <th>Projecto</th>
+            <th>Tareas</th>
+            <th>Avance</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(project, index) in projectsStore.projects" :key="project.id" class="hover">
+            <th>{{ index + 1 }}</th>
+            <td>{{ project.name }}</td>
+            <td>{{ project.tasks.length }}</td>
+            <td>
+              <progress class="w-56 progress progress-primary" value="1" max="100"></progress>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
     <InputModal
       :open="modalOpen"
@@ -47,7 +47,7 @@
 
       <template #footer>
         <div class="flex justify-end">
-          <button @click="customModalOpen = false" class="btn mr-4">Close</button>
+          <button @click="customModalOpen = false" class="mr-4 btn">Close</button>
           <button @click="customModalOpen = false" class="btn btn-primary">Aceptar</button>
         </div>
       </template>
@@ -64,15 +64,18 @@
 </template>
 
 <script lang="ts" setup>
-import InputModal from '../../common/components/InputModal.vue';
-import FabButton from '../../common/components/FabButton.vue';
-import AddCircle from '../../common/icons/AddCircle.vue';
 import CustomModal from '../../common/components/CustomModal.vue';
+import FabButton from '../../common/components/FabButton.vue';
+import InputModal from '../../common/components/InputModal.vue';
+import AddCircle from '../../common/icons/AddCircle.vue';
 import ModalIcon from '../../common/icons/ModalIcon.vue';
 import { ref } from 'vue';
+import { useProjectsStore } from '../store/projects.store';
 
 const modalOpen = ref(false);
 const customModalOpen = ref(false);
+
+const projectsStore = useProjectsStore();
 
 const onNewValue = (projectName: string) => {
   console.log({ projectName });
