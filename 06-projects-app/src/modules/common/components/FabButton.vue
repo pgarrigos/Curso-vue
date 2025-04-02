@@ -5,6 +5,8 @@
 </template>
 
 <script lang="ts" setup>
+import { defineEmits } from 'vue';
+
 interface Props {
   position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
