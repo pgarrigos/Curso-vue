@@ -1,5 +1,4 @@
 export interface Project {
-  [x: string]: any;
   id: string;
   name: string;
   tasks: Task[];

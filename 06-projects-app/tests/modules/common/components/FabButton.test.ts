@@ -1,14 +1,14 @@
 import { shallowMount } from '@vue/test-utils';
 import FabButton from '@/modules/common/components/FabButton.vue';
 
-describe('<FabButton/>', () => {
+describe('<FabButton />', () => {
   test('renders with default position', () => {
     const wrapper = shallowMount(FabButton);
 
     // console.log(wrapper.html());
     expect(wrapper.props().position).toBe('bottom-right');
     const buttonClasses = wrapper.find('button').classes();
-    const classesToHave = ['fixed', 'btn', 'btn-circle', 'btn-secondary', 'bottom-right'];
+    const classesToHave = ['btn', 'btn-circle', 'btn-secondary', 'fixed', 'bottom-right'];
 
     expect(buttonClasses).toEqual(classesToHave);
   });
@@ -24,6 +24,7 @@ describe('<FabButton/>', () => {
 
     expect(button.classes()).toContain('top-left');
   });
+
   test('renders with top-right position', () => {
     const wrapper = shallowMount(FabButton, {
       props: {

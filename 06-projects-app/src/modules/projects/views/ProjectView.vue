@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <section class="m-2">
-      <BreadCrumbs :name="project?.name ?? 'No name'" />
+      <bread-crumbs :name="project?.name ?? 'No name'" />
     </section>
 
     <section class="m-2">
@@ -13,7 +13,6 @@
               <th class="w-14">Completada</th>
               <th>Tarea</th>
               <th>Completada en</th>
-              <th>Favorite Color</th>
             </tr>
           </thead>
           <tbody>
@@ -29,9 +28,9 @@
               <td>{{ task.name }}</td>
               <td>{{ task.completedAt }}</td>
             </tr>
-            <tr class="hover">
-              <th></th>
 
+            <tr>
+              <th></th>
               <td>
                 <input
                   type="text"
@@ -41,6 +40,7 @@
                   @keyup.enter="addTask"
                 />
               </td>
+              <td></td>
             </tr>
           </tbody>
         </table>
@@ -52,14 +52,14 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import { useRouter } from 'vue-router';
-import BreadCrumbs from '../../common/components/BreadCrumbs.vue';
+
+import BreadCrumbs from '@/modules/common/components/BreadCrumbs.vue';
 import { useProjectsStore } from '../store/projects.store';
 import type { Project } from '../interfaces/project.interface';
 
 interface Props {
   id: string;
 }
-
 const router = useRouter();
 const props = defineProps<Props>();
 const projectStore = useProjectsStore();
@@ -67,11 +67,11 @@ const project = ref<Project | null>();
 const newTask = ref('');
 
 // let project = projectStore.projectList.find((project) => project.id === props.id);
-
 const addTask = () => {
   if (!project.value) return;
 
   projectStore.addTaskToProject(project.value.id, newTask.value);
+  newTask.value = '';
 };
 
 watch(

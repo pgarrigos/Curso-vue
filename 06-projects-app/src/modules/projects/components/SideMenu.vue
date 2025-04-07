@@ -1,18 +1,17 @@
 <template>
-  <aside class="min-h-screen bg-base-200 w-72">
-    <h2 class="mx-4 text-lg font-bold">
-      <RouterLink to="/">Proyectos</RouterLink>
+  <aside class="bg-base-200 w-72 min-h-screen">
+    <h2 class="text-lg font-bold mx-4">
+      <RouterLink to="/"> Proyectos </RouterLink>
     </h2>
-    <p v-if="projectsStore.noProjects" class="mx-4 text-sm text-gray-500">No hay Proyectos</p>
+    <p v-if="projectsStore.noProjects" class="text-sm text-gray-500 mx-4">No hay proyectos</p>
 
     <!-- Menu -->
-
     <ul v-else class="menu">
       <li v-for="project in projectsStore.projectList" :key="project.id">
         <template v-if="project.tasks.length > 0">
           <details>
             <summary>
-              <RouterLink to="`/project/${project.id}`">
+              <RouterLink :to="`/project/${project.id}`">
                 {{ project.name }}
               </RouterLink>
             </summary>

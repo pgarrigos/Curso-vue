@@ -5,7 +5,8 @@
 
     <main class="flex flex-row">
       <!-- Side Menu -->
-      <SideMenu />
+      <side-menu />
+
       <!-- RouterView -->
       <router-view />
     </main>
@@ -13,6 +14,6 @@
 </template>
 
 <script lang="ts" setup>
-import TopMenu from '../../common/components/TopMenu.vue';
+import TopMenu from '@/modules/common/components/TopMenu.vue';
 import SideMenu from '../components/SideMenu.vue';
 </script>

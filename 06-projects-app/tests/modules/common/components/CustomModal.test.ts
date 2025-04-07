@@ -1,7 +1,7 @@
 import CustomModal from '@/modules/common/components/CustomModal.vue';
 import { mount } from '@vue/test-utils';
 
-describe('<CustomModal/>', () => {
+describe('<CustomModal />', () => {
   test('renders dialog with default state', () => {
     const wrapper = mount(CustomModal);
 

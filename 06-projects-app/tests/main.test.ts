@@ -3,15 +3,15 @@ vi.mock('@/router', () => ({
 }));
 
 vi.mock('pinia', async (importOriginal) => {
-  const mod = (await importOriginal()) as { [key: string]: unknown };
+  const mod: any = await importOriginal();
 
   return {
-    mod,
+    ...mod,
     createPinia: vi.fn().mockReturnValue('pinia'),
   };
 });
 
-describe('Main.ts', () => {
+describe('Main.st', () => {
   const vue = require('vue');
 
   const useSpy = vi.fn();
@@ -25,12 +25,12 @@ describe('Main.ts', () => {
   vue.createApp = createApp;
 
   test('should be configured with pinia and router', async () => {
-    await import('../src/main');
+    await import('@/main');
 
     expect(vue.createApp).toHaveBeenCalled();
     expect(mountSpy).toHaveBeenCalledWith('#app');
 
-    console.log(useSpy.mock.calls);
+    // console.log(useSpy.mock.calls);
     expect(useSpy).toHaveBeenCalledWith('router');
     expect(useSpy).toHaveBeenCalledWith('pinia');
   });

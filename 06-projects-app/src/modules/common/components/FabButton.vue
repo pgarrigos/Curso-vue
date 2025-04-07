@@ -1,12 +1,10 @@
 <template>
-  <button @click="$emit('click')" :class="['fixed btn btn-circle btn-secondary', position]">
+  <button @click="$emit('click')" :class="['btn btn-circle btn-secondary fixed', position]">
     <slot />
   </button>
 </template>
 
 <script lang="ts" setup>
-import { defineEmits } from 'vue';
-
 interface Props {
   position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
@@ -14,6 +12,7 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   position: 'bottom-right',
 });
+
 defineEmits(['click']);
 </script>
 

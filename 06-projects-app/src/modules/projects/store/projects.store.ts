@@ -61,15 +61,16 @@ export const useProjectsStore = defineStore('projects', () => {
         };
       });
       // {
-      //   // id,
-      //   // name,
-      //   // taskCount,
-      //   // Completion,
+      //   id,
+      //   name,
+      //   taskCount,
+      //   completion,
       // }
     }),
 
     // Actions
     addProject,
+
     addTaskToProject,
     toggleTask,
   };
