@@ -588,3 +588,8 @@
     </section>
   </div>
 </template>
+
+<script lang="ts" setup>
+import { getProductsAction } from '../../../modules/products/actions';
+getProductsAction();
+</script>
