@@ -1,19 +1,16 @@
 <template>
-  <div>
-    <!-- component -->
+  <!-- component -->
+  <!-- Header Navbar -->
+  <top-menu />
 
-    <!-- Header Navbar -->
-    <TopMenu />
+  <!-- RouterView -->
+  <router-view />
 
-    <!-- RouterView -->
-    <router-view />
-
-    <!-- Footer -->
-    <CustomFooter />
-  </div>
+  <!-- Footer -->
+  <custom-footer />
 </template>
 
 <script lang="ts" setup>
-import CustomFooter from '../components/CustomFooter.vue';
 import TopMenu from '../components/TopMenu.vue';
+import CustomFooter from '../components/CustomFooter.vue';
 </script>

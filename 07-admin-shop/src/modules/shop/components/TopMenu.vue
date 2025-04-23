@@ -1,6 +1,6 @@
 <template>
   <nav class="fixed top-0 left-0 z-20 w-full border-b border-gray-200 bg-white py-2.5 px-6 sm:px-4">
-    <div class="container flex flex-wrap items-center justify-between max-w-6xl mx-auto">
+    <div class="container mx-auto flex max-w-6xl flex-wrap items-center justify-between">
       <a href="#" class="flex items-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -8,7 +8,7 @@
           viewBox="0 0 24 24"
           stroke-width="1.5"
           stroke="currentColor"
-          class="h-6 mr-3 text-blue-500 sm:h-9"
+          class="mr-3 h-6 text-blue-500 sm:h-9"
         >
           <path
             stroke-linecap="round"
@@ -17,7 +17,7 @@
           />
         </svg>
 
-        <span class="self-center text-xl font-semibold whitespace-nowrap">Termcode</span>
+        <span class="self-center whitespace-nowrap text-xl font-semibold">Termcode</span>
       </a>
       <div class="mt-2 sm:mt-0 sm:flex md:order-2">
         <!-- Login Button -->
@@ -37,13 +37,13 @@
         <button
           data-collapse-toggle="navbar-sticky"
           type="button"
-          class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
+          class="inline-flex items-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden"
           aria-controls="navbar-sticky"
           aria-expanded="false"
         >
           <span class="sr-only">Open main menu</span>
           <svg
-            class="w-6 h-6"
+            class="h-6 w-6"
             aria-hidden="true"
             fill="currentColor"
             viewBox="0 0 20 20"
@@ -58,16 +58,16 @@
         </button>
       </div>
       <div
-        class="items-center justify-between hidden w-full md:order-1 md:flex md:w-auto"
+        class="hidden w-full items-center justify-between md:order-1 md:flex md:w-auto"
         id="navbar-sticky"
       >
         <ul
-          class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium"
+          class="mt-4 flex flex-col rounded-lg border border-gray-100 bg-gray-50 p-4 md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:text-sm md:font-medium"
         >
           <li>
             <a
               href="#"
-              class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-700"
+              class="block rounded bg-blue-700 py-2 pl-3 pr-4 text-white md:bg-transparent md:p-0 md:text-blue-700"
               aria-current="page"
               >Home</a
             >
@@ -75,21 +75,21 @@
           <li>
             <a
               href="#"
-              class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+              class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
               >About</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+              class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
               >Services</a
             >
           </li>
           <li>
             <a
               href="#"
-              class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+              class="block rounded py-2 pl-3 pr-4 text-gray-700 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
               >Contact</a
             >
           </li>

@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-6 text-gray-900 bg-gray-200">
+  <footer class="py-6 bg-gray-200 text-gray-900">
     <div
       class="container px-6 mx-auto space-y-6 divide-y divide-gray-400 md:space-y-12 divide-opacity-50"
     >
@@ -7,7 +7,7 @@
         <div
           class="flex flex-col self-center text-sm text-center md:block lg:col-start-1 md:space-x-6"
         >
-          <span>Copyright © {{ new Date().getFullYear() }} by codemix team </span>
+          <span>Copy right © {{ new Date().getFullYear() }} by codemix team </span>
           <a rel="noopener noreferrer" href="#">
             <span>Privacy policy</span>
           </a>
@@ -20,7 +20,7 @@
             rel="noopener noreferrer"
             href="#"
             title="Email"
-            class="flex items-center justify-center w-10 h-10 duration-150 bg-blue-500 rounded-full hover:bg-blue-600 text-gray-50"
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150 text-gray-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -38,7 +38,7 @@
             rel="noopener noreferrer"
             href="#"
             title="Twitter"
-            class="flex items-center justify-center w-10 h-10 duration-150 bg-blue-500 rounded-full hover:bg-blue-600 text-gray-50"
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150 text-gray-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@
             rel="noopener noreferrer"
             href="#"
             title="GitHub"
-            class="flex items-center justify-center w-10 h-10 duration-150 bg-blue-500 rounded-full hover:bg-blue-600 text-gray-50"
+            class="flex items-center justify-center w-10 h-10 rounded-full bg-blue-500 hover:bg-blue-600 duration-150 text-gray-50"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

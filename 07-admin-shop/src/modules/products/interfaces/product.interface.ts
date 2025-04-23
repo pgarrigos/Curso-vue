@@ -19,8 +19,8 @@ export interface Product {
 export enum Size {
   L = 'L',
   M = 'M',
-  s = 'S',
-  XL = 'XL',
+  S = 'S',
+  Xl = 'XL',
   Xs = 'XS',
   Xxl = 'XXL',
 }
