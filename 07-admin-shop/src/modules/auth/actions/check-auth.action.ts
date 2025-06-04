@@ -2,26 +2,24 @@ import { tesloApi } from '@/api/tesloApi';
 import type { AuthResponse, User } from '../interfaces';
 import { isAxiosError } from 'axios';
 
-interface LoginError {
+interface CheckError {
   ok: false;
-  message: string;
 }
 
-interface LoginSuccess {
+interface CheckSuccess {
   ok: true;
   user: User;
   token: string;
 }
 
-export const loginAction = async (
-  email: string,
-  password: string,
-): Promise<LoginError | LoginSuccess> => {
+export const checkAuthAction = async (): Promise<CheckError | CheckSuccess> => {
   try {
-    const { data } = await tesloApi.post<AuthResponse>('/auth/login', {
-      email,
-      password,
-    });
+    const localToken = localStorage.getItem('token');
+    if (localToken && localToken.length < 10) {
+      return { ok: false };
+    }
+
+    const { data } = await tesloApi.get<AuthResponse>('/auth/check-status');
 
     return {
       ok: true,
@@ -32,11 +30,9 @@ export const loginAction = async (
     if (isAxiosError(error) && error.response?.status === 401) {
       return {
         ok: false,
-        message: 'Usuario o contraseña incorrectos',
       };
     }
 
-    console.log(error);
-    throw new Error('No se pudo realizar la petición');
+    throw new Error('No se pudo verificar la sesión');
   }
 };

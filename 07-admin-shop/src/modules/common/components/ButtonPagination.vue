@@ -21,8 +21,8 @@
 </template>
 
 <script lang="ts" setup>
-import ArrowRightIcon from '@/icons/ArrowRightIcon.vue';
-import ArrowLeftIcon from '@/icons/ArrowLeftIcon.vue';
+import ArrowRightIcon from "@/icons/ArrowRightIcon.vue";
+import ArrowLeftIcon from "@/icons/ArrowLeftIcon.vue";
 
 interface Props {
   page: number;
