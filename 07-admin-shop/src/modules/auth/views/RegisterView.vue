@@ -1,5 +1,5 @@
 <template>
-  <h1 class="text-2xl font-semibold mb-4">Nueva cuanta</h1>
+  <h1 class="mb-4 text-2xl font-semibold">Nueva cuenta</h1>
   <form @submit.prevent="onRegister">
     <!-- Username Input -->
     <div class="mb-4">
@@ -10,7 +10,7 @@
         type="text"
         id="name"
         name="name"
-        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         autocomplete="off"
       />
     </div>
@@ -24,7 +24,7 @@
         type="email"
         id="email"
         name="email"
-        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         autocomplete="off"
       />
     </div>
@@ -37,7 +37,7 @@
         type="password"
         id="password"
         name="password"
-        class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
         autocomplete="off"
       />
     </div>
@@ -49,13 +49,13 @@
     <!-- Login Button -->
     <button
       type="submit"
-      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+      class="w-full px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-600"
     >
       Crear cuenta
     </button>
   </form>
   <!-- Sign up  Link -->
-  <div class="mt-6 text-blue-500 text-center">
+  <div class="mt-6 text-center text-blue-500">
     <RouterLink :to="{ name: 'login' }" class="hover:underline">Ingresar por aquí</RouterLink>
   </div>
 </template>

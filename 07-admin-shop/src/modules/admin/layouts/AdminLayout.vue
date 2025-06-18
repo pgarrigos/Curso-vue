@@ -2,13 +2,8 @@
   <!-- component -->
   <div class="flex w-screen h-screen text-gray-700">
     <!-- Component Start -->
-    <div
-      class="flex flex-col items-center w-16 pb-4 overflow-auto border-r border-gray-300"
-    >
-      <a
-        class="flex items-center justify-center flex-shrink-0 w-full h-16 bg-gray-300"
-        href="#"
-      >
+    <div class="flex flex-col items-center w-16 pb-4 overflow-auto border-r border-gray-300">
+      <a class="flex items-center justify-center flex-shrink-0 w-full h-16 bg-gray-300" href="#">
         <svg
           class="w-8 h-8"
           xmlns="http://www.w3.org/2000/svg"
@@ -203,9 +198,9 @@
         >
           <span class="leading-none">Item 6</span>
         </a>
-        <a
-          class="flex items-center flex-shrink-0 h-10 px-3 mt-auto text-sm font-medium bg-blue-500 rounded hover:bg-blue-700 text-white"
-          href="#"
+        <RouterLink
+          to="/admin/products/create"
+          class="flex items-center flex-shrink-0 h-10 px-3 mt-auto text-sm font-medium text-white bg-blue-500 rounded hover:bg-blue-700"
         >
           <svg
             class="w-5 h-5"
@@ -222,7 +217,7 @@
             />
           </svg>
           <span class="ml-2 leading-none">Nuevo</span>
-        </a>
+        </RouterLink>
       </div>
     </div>
     <div class="flex flex-col flex-grow">
@@ -239,9 +234,7 @@
           Action 2
         </button>
         <button class="relative ml-2 text-sm focus:outline-none group">
-          <div
-            class="flex items-center justify-between w-10 h-10 rounded hover:bg-gray-300"
-          >
+          <div class="flex items-center justify-between w-10 h-10 rounded hover:bg-gray-300">
             <svg
               class="w-5 h-5 mx-auto"
               xmlns="http://www.w3.org/2000/svg"
@@ -260,15 +253,9 @@
           <div
             class="absolute right-0 flex-col items-start hidden w-40 pb-1 bg-white border border-gray-300 shadow-lg group-focus:flex"
           >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#"
-              >Menu Item 1</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#"
-              >Menu Item 1</a
-            >
-            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#"
-              >Menu Item 1</a
-            >
+            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+            <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
           </div>
         </button>
       </div>
@@ -281,8 +268,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useAuthStore } from "@/modules/auth/stores/auth.store";
-import { storeToRefs } from "pinia";
+import { useAuthStore } from '@/modules/auth/stores/auth.store';
+import { storeToRefs } from 'pinia';
 
 const { username } = storeToRefs(useAuthStore());
 </script>

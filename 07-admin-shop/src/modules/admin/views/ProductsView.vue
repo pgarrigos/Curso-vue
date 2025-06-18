@@ -15,8 +15,8 @@
                 <th class="flex-1 px-4 py-3 text-sm font-semibold text-left uppercase">
                   Titulo
                 </th>
-                <th class="px-4 py-3 text-sm font-semibold w-28 uppercase">Precio</th>
-                <th class="w-60 px-4 py-3 text-sm font-semibold text-left uppercase">
+                <th class="px-4 py-3 text-sm font-semibold uppercase w-28">Precio</th>
+                <th class="px-4 py-3 text-sm font-semibold text-left uppercase w-60">
                   Tallas
                 </th>
               </tr>
@@ -42,7 +42,7 @@
                   >
                 </td>
                 <td class="px-4 py-3 text-left">
-                  <span class="bg-blue-200 text-blue-600 py-1 px-3 rounded-full text-xs">
+                  <span class="px-3 py-1 text-xs text-blue-600 bg-blue-200 rounded-full">
                     {{ product.price }}
                   </span>
                 </td>
@@ -67,8 +67,8 @@ import { watchEffect } from "vue";
 
 import { useQueryClient, useQuery } from "@tanstack/vue-query";
 import { getProductsAction } from "../../../modules/products/actions";
-import ButtonPagination from "@/modules/common/components/ButtonPagination.vue";
-import { usePagination } from "@/modules/common/composables/usePagination";
+import ButtonPagination from "../../../modules/common/components/ButtonPagination.vue";
+import { usePagination } from "../../../modules/common/composables/usePagination";
 
 const queryClient = useQueryClient();
 const { page } = usePagination();
